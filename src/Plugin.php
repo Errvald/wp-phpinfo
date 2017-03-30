@@ -9,15 +9,6 @@ class Plugin
 {
 
     /**
-	 * The current version of the plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   public
-	 * @var      string    $version    The current version of the plugin.
-	 */
-	public $version = '1.0.0';
-
-    /**
 	 * Page meta data
 	 *
 	 * @since    1.0.0
@@ -39,7 +30,7 @@ class Plugin
 	 */
 	public $minimums = [
         'php_ver' => 5.6,
-        'php_met' => 30,
+        'php_met' => 20,
         'mysql'   => 5.5,
         'wp_ver'  => 4
     ];
@@ -66,7 +57,7 @@ class Plugin
             $this->pageMeta['slug'],
             PHINFO_URL . 'src/assets/css/table.css',
             [],
-            1.0,
+            PHINFO_VER,
             FALSE
         );
          

@@ -34,7 +34,8 @@ module.exports = function (grunt) {
                     '!.gitignore',
                     '!.gitmodules',
                     '!.gitattributes',
-                    '!composer.lock'
+                    '!composer.lock',
+                    '!.scss'
                 ],
                 dest: 'build/<%= pkg.name %>/'
             }
@@ -55,30 +56,30 @@ module.exports = function (grunt) {
         },
         replace: {
             plugin_file: {
-				src: [ 'wp-phpinfo.php' ],
-				overwrite: true,
-				replacements: [{
-					from: /Version:\s*(.*)/,
-					to: "Version: <%= pkg.version %>"
-				}, {
-					from: /define\(\s*'PHINFO_VER',\s*'(.*)'\s*\);/,
-					to: "define( 'PHINFO_VER', '<%= pkg.version %>' );"
-				}]
-			}
+                src: ['wp-phpinfo.php'],
+                overwrite: true,
+                replacements: [{
+                    from: /Version:\s*(.*)/,
+                    to: "Version: <%= pkg.version %>"
+                }, {
+                    from: /define\(\s*'PHINFO_VER',\s*'(.*)'\s*\);/,
+                    to: "define( 'PHINFO_VER', '<%= pkg.version %>' );"
+                }]
+            }
         }
 
     });
 
     //load modules
-	grunt.loadNpmTasks( 'grunt-contrib-compress' );
-	grunt.loadNpmTasks( 'grunt-contrib-clean' );
-	grunt.loadNpmTasks( 'grunt-contrib-copy' );
-	grunt.loadNpmTasks( 'grunt-text-replace' );
-	grunt.loadNpmTasks( 'grunt-shell');
+    grunt.loadNpmTasks('grunt-contrib-compress');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-text-replace');
+    grunt.loadNpmTasks('grunt-shell');
 
     // Tasks
-    grunt.registerTask( 'version_number', [ 'replace:plugin_file' ] );
-	grunt.registerTask( 'build', [  'shell:composer', 'copy', 'compress' ] );
-	grunt.registerTask( 'just_build', [  'copy', 'compress' ] );
+    grunt.registerTask('version_number', ['replace:plugin_file']);
+    grunt.registerTask('build', ['shell:composer', 'copy', 'compress']);
+    grunt.registerTask('just_build', ['copy', 'compress']);
 
 };

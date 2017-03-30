@@ -1,5 +1,5 @@
 <div class="wrap">
-    <h1><?php echo $this->pageMeta['name'];?></h1>
+    <h1 class="page-title"><?php echo $this->pageMeta['name'];?></h1>
 
     <div class="phinfo-table">
     <?php

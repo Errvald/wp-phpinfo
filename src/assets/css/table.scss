@@ -1,0 +1,45 @@
+.phinfo-table {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+
+    .phinfo-table__item {
+        padding: 25px;
+        display: flex;
+
+        &:nth-child(even) {
+            background-color: rgb(246, 248, 249);
+        }
+
+    }
+
+    .phinfo-table__status {
+        max-width: 80px;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        flex: 1;
+
+        > span {
+            width: 60px;
+            height: 60px;
+            font-size: 3em;
+            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+            border-radius: 50%;
+            color: #4CAF50;
+            line-height: 60px;
+        }
+    }
+
+    .phinfo-table__name {
+        flex: 1;
+        font-size: 1.5em;
+    }
+
+    .phinfo-table__desc {
+        font-size: .7em;
+        opacity: .6;
+        padding-top: 10px;
+    }
+
+}

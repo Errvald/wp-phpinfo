@@ -1,0 +1,22 @@
+{
+    "name": "errvald/wp-phpinfo",
+    "description": "Test plugin",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Erevald Kullolli",
+            "homepage": "https://errvald.github.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Errvald\\WpPhpinfo\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
